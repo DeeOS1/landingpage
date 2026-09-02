@@ -229,11 +229,13 @@ h1 strong {
   background: linear-gradient(180deg, #ef3139 0%, #c80913 100%);
   box-shadow: 0 7px 18px rgba(215, 14, 24, .42), 0 0 0 1px rgba(255, 81, 88, .2);
   color: var(--yellow);
+  font-family: inherit;
   font-size: clamp(23px, 2vw, 32px);
   font-weight: 900;
   letter-spacing: .015em;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
   transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
 
@@ -250,6 +252,189 @@ h1 strong {
 
 .cta:active {
   transform: translateY(1px);
+}
+
+.registration-dialog {
+  width: min(423px, calc(100vw - 24px));
+  max-height: calc(100svh - 24px);
+  margin: auto;
+  padding: 32px;
+  overflow: auto;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
+  color: #050505;
+  font-family: inherit;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .52);
+}
+
+.registration-dialog::backdrop {
+  background: rgba(0, 0, 0, .76);
+  backdrop-filter: blur(5px);
+}
+
+.dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #777;
+  font: inherit;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dialog-close:hover {
+  background: #f2f2f2;
+  color: #111;
+}
+
+.dialog-close:focus-visible,
+.registration-form input:focus-visible,
+.registration-submit:focus-visible,
+.login-prompt a:focus-visible,
+.consent-field a:focus-visible {
+  outline: 3px solid rgba(224, 0, 22, .3);
+  outline-offset: 2px;
+}
+
+.registration-header {
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.registration-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.registration-header p {
+  margin: 7px 0 0;
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.registration-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-field {
+  display: grid;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-field > input,
+.phone-field {
+  width: 100%;
+  height: 49px;
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.form-field > input,
+.phone-field input {
+  padding: 0 13px;
+  color: #111;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form-field input::placeholder {
+  color: #7a7a7a;
+  opacity: 1;
+}
+
+.phone-field {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.phone-flag {
+  flex: 0 0 auto;
+  margin-left: 14px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.phone-field input {
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+}
+
+.phone-field:focus-within,
+.form-field > input:focus-visible {
+  border-color: #df0016;
+  box-shadow: 0 0 0 3px rgba(223, 0, 22, .1);
+}
+
+.consent-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.consent-field input {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+  accent-color: #df0016;
+}
+
+.consent-field a,
+.login-prompt a {
+  color: #df0016;
+  text-decoration: none;
+}
+
+.registration-submit {
+  min-height: 48px;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 12px;
+  background: #dc0017;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.registration-submit:hover {
+  background: #be0014;
+}
+
+.registration-submit:active {
+  transform: translateY(1px);
+}
+
+.login-prompt {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .leagues {
@@ -536,6 +721,14 @@ footer {
 
   h1 {
     font-size: clamp(39px, 12.4vw, 52px);
+  }
+
+  .registration-dialog {
+    width: 100vw;
+    max-width: none;
+    max-height: 100svh;
+    padding: 32px;
+    border-radius: 18px;
   }
 }
 

@@ -257,51 +257,43 @@ h1 strong {
   background: rgba(255, 208, 0, .67);
 }
 
-.league-mark {
+.league-logo-wrap {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
   width: clamp(64px, 5.2vw, 88px);
   aspect-ratio: 1;
-  color: #fff;
-  font-size: clamp(20px, 1.65vw, 28px);
-  font-weight: 950;
-  letter-spacing: -.08em;
-  line-height: 1;
   filter: drop-shadow(0 3px 4px #000);
 }
 
-.premier {
-  border: 7px solid #fff;
-  border-radius: 45% 52% 48% 45%;
-  transform: rotate(-7deg);
+.league-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.laliga {
-  border: 12px dashed #fff;
-  border-radius: 50%;
+.league-logo-wrap.premier {
+  padding: 2px;
 }
 
-.bundesliga {
-  border: 4px solid #fff;
-  border-radius: 12px 0 12px 0;
-  transform: rotate(-8deg);
+.league-logo-wrap.laliga {
+  padding: 5px;
 }
 
-.seriea {
-  font-size: clamp(44px, 4.2vw, 70px);
-  font-style: italic;
-  transform: skew(-10deg);
+.league-logo-wrap.bundesliga {
+  width: clamp(72px, 5.8vw, 98px);
+  aspect-ratio: 1.42;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
-.ligue1 {
-  border: 14px solid #fff;
-  border-radius: 20%;
-  transform: rotate(27deg);
+.league-logo-wrap.seriea {
+  padding: 1px 7px;
 }
 
-.ligue1::first-letter {
-  transform: rotate(-27deg);
+.league-logo-wrap.ligue1 {
+  padding: 3px;
 }
 
 .league p {
@@ -459,8 +451,12 @@ footer {
     height: 1px;
   }
 
-  .league-mark {
+  .league-logo-wrap {
     width: 66px;
+  }
+
+  .league-logo-wrap.bundesliga {
+    width: 76px;
   }
 
   .league strong {

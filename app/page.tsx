@@ -1,9 +1,9 @@
 const leagues = [
-  { mark: 'PL', name: 'Premier League', country: 'Англия', className: 'premier' },
-  { mark: 'LL', name: 'La Liga', country: 'Испания', className: 'laliga' },
-  { mark: 'BL', name: 'Bundesliga', country: 'Германия', className: 'bundesliga' },
-  { mark: 'A', name: 'Serie A', country: 'Италия', className: 'seriea' },
-  { mark: 'L1', name: 'Ligue 1', country: 'Франция', className: 'ligue1' },
+  { logo: '/assets/Premier League.png', name: 'Premier League', country: 'Англия', className: 'premier' },
+  { logo: '/assets/La Liga.png', name: 'La Liga', country: 'Испания', className: 'laliga' },
+  { logo: '/assets/Bundesliga.webp', name: 'Bundesliga', country: 'Германия', className: 'bundesliga' },
+  { logo: '/assets/Serie A.png', name: 'Serie A', country: 'Италия', className: 'seriea' },
+  { logo: '/assets/Ligue1_logo 1.png', name: 'Ligue 1', country: 'Франция', className: 'ligue1' },
 ];
 
 export default function Home() {
@@ -46,8 +46,8 @@ export default function Home() {
         <section className="leagues" id="leagues" aria-label="Пять европейских лиг">
           {leagues.map((league) => (
             <article className="league" key={league.name}>
-              <span className={`league-mark ${league.className}`} aria-hidden="true">
-                {league.mark}
+              <span className={`league-logo-wrap ${league.className}`}>
+                <img className="league-logo" src={league.logo} alt={`${league.name} logo`} />
               </span>
               <p>
                 <strong>{league.name}</strong>

@@ -57,60 +57,42 @@ a {
 }
 
 .page-shell {
-  width: min(100% - 7.2vw, 1550px);
+  width: min(100% - 7.2vw, 1556px);
   min-height: 100svh;
   margin: 0 auto;
-  padding: clamp(28px, 5.2vh, 50px) 0 clamp(14px, 2vh, 22px);
+  padding: clamp(28px, 5.1vh, 48px) 0 clamp(12px, 1.7vh, 18px);
   display: grid;
   grid-template-rows: auto 1fr auto auto;
 }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
   width: fit-content;
-  font-weight: 900;
-  letter-spacing: -.04em;
-  line-height: 1;
 }
 
-.brand-word {
-  font-size: clamp(30px, 3.1vw, 50px);
-}
-
-.brand-badge {
-  display: grid;
-  place-items: center;
-  width: clamp(40px, 3.5vw, 56px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--yellow);
-  color: #bd241b;
-  font-family: Georgia, serif;
-  font-size: clamp(24px, 2.2vw, 34px);
-  font-style: italic;
-  font-weight: 900;
-  transform: rotate(-8deg);
+.brand-logo {
+  display: block;
+  width: clamp(200px, 16.8vw, 270px);
+  height: auto;
 }
 
 .hero {
   min-height: 0;
   display: flex;
   align-items: center;
-  padding: 2vh 0 1.8vh;
+  padding: 0 0 2vh;
 }
 
 .hero-copy {
-  width: min(46.5vw, 690px);
+  width: min(57vw, 890px);
 }
 
 h1 {
+  width: min(100%, 690px);
   margin: 0;
   text-transform: uppercase;
-  font-size: clamp(48px, 5.35vw, 88px);
+  font-size: clamp(48px, 4.75vw, 78px);
   font-weight: 950;
-  line-height: .99;
+  line-height: .92;
   letter-spacing: -.045em;
   text-shadow: 0 3px 16px rgba(0, 0, 0, .7);
 }
@@ -126,76 +108,131 @@ h1 strong {
 }
 
 .lead {
-  margin: clamp(12px, 1.7vh, 20px) 0 clamp(18px, 2.2vh, 26px);
+  margin: clamp(10px, 1.5vh, 16px) 0 clamp(17px, 2vh, 20px);
   color: #e4e4e4;
-  font-size: clamp(15px, 1.4vw, 22px);
+  font-size: clamp(15px, 1.3vw, 21px);
   line-height: 1.35;
   text-shadow: 0 2px 6px #000;
 }
 
-.benefits {
+.offer {
   display: grid;
-  grid-template-columns: 1.04fr .91fr;
-  gap: clamp(14px, 1.1vw, 20px);
+  grid-template-columns: minmax(0, 680px) minmax(178px, 194px);
+  gap: clamp(14px, 1vw, 18px);
 }
 
-.benefit-card {
-  min-height: clamp(108px, 13.4vh, 136px);
+.jackpot-card {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(190px, 25.3vh, 238px);
   margin: 0;
-  padding: clamp(14px, 1.4vw, 20px);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(16px, 1.45vw, 24px);
-  border: 1.5px solid rgba(255, 208, 0, .72);
-  border-radius: 15px;
-  background: linear-gradient(145deg, rgba(8, 8, 8, .9), rgba(0, 0, 0, .55));
-  box-shadow: inset 0 0 22px rgba(255, 187, 0, .025);
+  justify-content: center;
+  padding: 10px 28px 12px;
+  clip-path: polygon(22px 0, calc(100% - 45px) 0, 100% 31px, 100% calc(100% - 28px), calc(100% - 24px) 100%, 22px 100%, 0 calc(100% - 22px), 0 22px);
+  background: linear-gradient(110deg, #fff0a8 0%, #ffba00 16%, #ffe785 50%, #ffad00 84%, #fff2b2 100%);
+  filter: drop-shadow(0 0 8px rgba(255, 189, 0, .75));
 }
 
-.benefit-icon {
-  flex: 0 0 auto;
+.jackpot-card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 2px;
+  content: '';
+  clip-path: polygon(21px 0, calc(100% - 44px) 0, 100% 30px, 100% calc(100% - 27px), calc(100% - 23px) 100%, 21px 100%, 0 calc(100% - 21px), 0 21px);
+  background:
+    radial-gradient(circle at 52% 20%, rgba(255, 196, 0, .14), transparent 43%),
+    linear-gradient(145deg, rgba(10, 10, 9, .96), rgba(0, 0, 0, .88));
+}
+
+.jackpot-card::after {
+  position: absolute;
+  inset: 13% 5%;
+  z-index: -1;
+  content: '';
+  opacity: .2;
+  background-image:
+    linear-gradient(30deg, transparent 45%, rgba(255, 203, 0, .26) 46%, rgba(255, 203, 0, .26) 51%, transparent 52%),
+    linear-gradient(150deg, transparent 45%, rgba(255, 203, 0, .2) 46%, rgba(255, 203, 0, .2) 51%, transparent 52%);
+  background-size: 30px 52px;
+}
+
+.jackpot-card strong {
+  display: block;
+  color: #ffd000;
+  font-size: clamp(102px, 9.6vw, 154px);
+  font-weight: 1000;
+  line-height: .82;
+  letter-spacing: -.055em;
+  background: linear-gradient(180deg, #fff0a0 0%, #ffc800 28%, #ffb400 62%, #ffe45d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 5px 0 #9b5c00) drop-shadow(0 8px 8px #000);
+}
+
+.jackpot-card > span {
+  display: block;
+  margin-top: clamp(13px, 2vh, 20px);
+  font-size: clamp(22px, 1.9vw, 31px);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 3px 8px #000;
+}
+
+.places-card {
+  align-self: end;
+  min-height: clamp(180px, 22.7vh, 214px);
+  margin: 0 0 4px;
+  padding: 15px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 208, 0, .76);
+  border-radius: 17px;
+  background: linear-gradient(145deg, rgba(9, 9, 9, .93), rgba(0, 0, 0, .74));
+  box-shadow: inset 0 0 24px rgba(255, 187, 0, .04);
+}
+
+.places-icon {
   display: grid;
   place-items: center;
-  width: clamp(72px, 5.6vw, 90px);
+  width: clamp(58px, 4.2vw, 67px);
   aspect-ratio: 1;
   border: 1.5px solid var(--yellow);
   border-radius: 50%;
   color: var(--yellow);
   font-family: Georgia, serif;
-  font-size: clamp(38px, 3.2vw, 52px);
+  font-size: clamp(38px, 3.1vw, 50px);
   line-height: 1;
 }
 
-.benefit-icon.trophy {
-  font-size: clamp(32px, 2.8vw, 44px);
-}
-
-.benefit-card p {
-  margin: 0;
-  min-width: 0;
-}
-
-.benefit-card strong,
-.benefit-card span:not(.benefit-icon) {
+.places-card strong {
   display: block;
-}
-
-.benefit-card strong {
-  color: var(--yellow);
-  font-size: clamp(28px, 2.7vw, 43px);
-  line-height: .98;
-}
-
-.benefit-card p span {
   margin-top: 6px;
-  font-size: clamp(15px, 1.35vw, 22px);
-  line-height: 1.12;
+  color: var(--yellow);
+  font-size: clamp(54px, 4.7vw, 75px);
+  font-weight: 950;
+  line-height: .88;
+}
+
+.places-card > span:last-child {
+  display: block;
+  margin-top: 10px;
+  font-size: clamp(16px, 1.3vw, 21px);
+  line-height: 1.08;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .cta {
-  width: min(72%, 490px);
-  min-height: clamp(66px, 8.4vh, 85px);
-  margin-top: clamp(20px, 2.3vh, 28px);
+  width: min(55%, 486px);
+  min-height: clamp(64px, 8vh, 76px);
+  margin: clamp(17px, 1.9vh, 20px) 0 0 26px;
   display: grid;
   place-items: center;
   border: 1px solid #ffe677;
@@ -228,6 +265,7 @@ h1 strong {
 
 .leagues {
   min-height: clamp(118px, 15.2vh, 148px);
+  margin: 0 8px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: stretch;
@@ -337,7 +375,15 @@ footer {
   }
 
   .hero-copy {
-    width: min(57vw, 610px);
+    width: min(69vw, 680px);
+  }
+
+  .offer {
+    grid-template-columns: minmax(0, 1fr) 170px;
+  }
+
+  .jackpot-card > span {
+    font-size: clamp(20px, 2.5vw, 27px);
   }
 
   .league {
@@ -400,25 +446,47 @@ footer {
     font-size: 17px;
   }
 
-  .benefits {
+  .offer {
     grid-template-columns: 1fr;
   }
 
-  .benefit-card {
-    min-height: 104px;
-    padding: 14px 18px;
+  .jackpot-card {
+    min-height: 184px;
+    padding-inline: 14px;
   }
 
-  .benefit-icon {
-    width: 70px;
+  .jackpot-card strong {
+    font-size: clamp(82px, 24vw, 132px);
   }
 
-  .benefit-card strong {
-    font-size: 34px;
+  .jackpot-card > span {
+    font-size: clamp(18px, 5.5vw, 27px);
+    text-align: center;
   }
 
-  .benefit-card p span {
-    font-size: 18px;
+  .places-card {
+    width: 100%;
+    min-height: 132px;
+    margin: 0;
+    padding: 14px 20px;
+    display: grid;
+    grid-template-columns: 76px auto 1fr;
+    gap: 18px;
+  }
+
+  .places-icon {
+    width: 68px;
+  }
+
+  .places-card strong {
+    margin: 0;
+    font-size: 66px;
+  }
+
+  .places-card > span:last-child {
+    margin: 0;
+    font-size: 20px;
+    text-align: left;
   }
 
   .cta {
@@ -430,6 +498,7 @@ footer {
 
   .leagues {
     grid-template-columns: 1fr;
+    margin-inline: 0;
     border-radius: 14px;
   }
 

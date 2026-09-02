@@ -1,5 +1,5 @@
 const leagues = [
-  { logo: '/assets/Premier League.png', name: 'Premier League', country: 'Англия', className: 'premier' },
+  { logo: '/assets/Premier League 2.png', name: 'Premier League', country: 'Англия', className: 'premier' },
   { logo: '/assets/La Liga.png', name: 'La Liga', country: 'Испания', className: 'laliga' },
   { logo: '/assets/Bundesliga.webp', name: 'Bundesliga', country: 'Германия', className: 'bundesliga' },
   { logo: '/assets/Serie A.png', name: 'Serie A', country: 'Италия', className: 'seriea' },
@@ -13,8 +13,7 @@ export default function Home() {
 
       <div className="page-shell">
         <header className="brand" aria-label="Tennisi">
-          <span className="brand-word">TENNISI</span>
-          <span className="brand-badge">tj</span>
+          <img className="brand-logo" src="/assets/logo.png" alt="Tennisi" />
         </header>
 
         <section className="hero" aria-labelledby="main-title">
@@ -27,15 +26,16 @@ export default function Home() {
 
             <p className="lead">Топ-5 европейских лиг. Новая неделя — новые шансы.</p>
 
-            <div className="benefits" aria-label="Условия акции">
-              <article className="benefit-card">
-                <span className="benefit-icon trophy" aria-hidden="true">♜</span>
-                <p><strong>25 000</strong><span>фрибетов<br />каждую неделю</span></p>
+            <div className="offer" aria-label="Условия акции">
+              <article className="jackpot-card">
+                <strong>25 000</strong>
+                <span>фрибетов каждую неделю</span>
               </article>
 
-              <article className="benefit-card">
-                <span className="benefit-icon star" aria-hidden="true">☆</span>
-                <p><strong>60</strong><span>призовых мест</span></p>
+              <article className="places-card">
+                <span className="places-icon" aria-hidden="true">☆</span>
+                <strong>60</strong>
+                <span>призовых<br />мест</span>
               </article>
             </div>
 

@@ -38,7 +38,7 @@ export default function Home() {
               </article>
             </div>
 
-            <a className="cta" href="#leagues">Участвовать</a>
+            <a className="cta" href="https://tennisi.tj/mtg2/cgi/free.Welcome?lang=rus">Участвовать</a>
           </div>
         </section>
 

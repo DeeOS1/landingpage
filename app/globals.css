@@ -432,6 +432,10 @@ footer {
     font-size: clamp(43px, 13vw, 67px);
   }
 
+  h1 strong {
+    color: var(--yellow);
+  }
+
   .lead {
     max-width: 520px;
     font-size: 17px;

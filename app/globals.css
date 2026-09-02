@@ -3,6 +3,7 @@
 :root {
   --yellow: #ffd20a;
   --yellow-deep: #e7aa00;
+  --accent-red: #e31b23;
   --ink: #030303;
   --muted: #d6d6d6;
 }
@@ -103,7 +104,7 @@ h1 strong {
 }
 
 h1 strong {
-  color: var(--yellow);
+  color: var(--accent-red);
   font-weight: inherit;
 }
 
@@ -161,16 +162,16 @@ h1 strong {
 
 .jackpot-card strong {
   display: block;
-  color: #ffd000;
+  color: var(--accent-red);
   font-size: clamp(102px, 9.6vw, 154px);
   font-weight: 1000;
   line-height: .82;
   letter-spacing: -.055em;
-  background: linear-gradient(180deg, #fff0a0 0%, #ffc800 28%, #ffb400 62%, #ffe45d 100%);
+  background: linear-gradient(180deg, #ff6b70 0%, #f12831 28%, #d20d17 66%, #ff454d 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 5px 0 #9b5c00) drop-shadow(0 8px 8px #000);
+  filter: drop-shadow(0 5px 0 #790008) drop-shadow(0 8px 8px #000);
 }
 
 .jackpot-card > span {
@@ -202,7 +203,7 @@ h1 strong {
 .places-card strong {
   display: block;
   margin-top: 6px;
-  color: var(--yellow);
+  color: var(--accent-red);
   font-size: clamp(54px, 4.7vw, 75px);
   font-weight: 950;
   line-height: .88;
@@ -227,7 +228,7 @@ h1 strong {
   border-radius: 14px;
   background: linear-gradient(180deg, #ffdc1f 0%, #ffc600 100%);
   box-shadow: 0 7px 18px rgba(255, 193, 0, .34), 0 0 0 1px rgba(255, 166, 0, .12);
-  color: #050505;
+  color: var(--accent-red);
   font-size: clamp(23px, 2vw, 32px);
   font-weight: 900;
   letter-spacing: .015em;

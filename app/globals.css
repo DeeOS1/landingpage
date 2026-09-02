@@ -20,7 +20,7 @@ body {
   margin: 0;
   background: #000;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Geometria, Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -224,11 +224,11 @@ h1 strong {
   margin: clamp(17px, 1.9vh, 20px) 0 0 26px;
   display: grid;
   place-items: center;
-  border: 1px solid #ffe677;
+  border: 1px solid #ff6b70;
   border-radius: 14px;
-  background: linear-gradient(180deg, #ffdc1f 0%, #ffc600 100%);
-  box-shadow: 0 7px 18px rgba(255, 193, 0, .34), 0 0 0 1px rgba(255, 166, 0, .12);
-  color: var(--accent-red);
+  background: linear-gradient(180deg, #ef3139 0%, #c80913 100%);
+  box-shadow: 0 7px 18px rgba(215, 14, 24, .42), 0 0 0 1px rgba(255, 81, 88, .2);
+  color: var(--yellow);
   font-size: clamp(23px, 2vw, 32px);
   font-weight: 900;
   letter-spacing: .015em;
@@ -240,7 +240,7 @@ h1 strong {
 .cta:hover {
   transform: translateY(-2px);
   filter: brightness(1.05);
-  box-shadow: 0 10px 25px rgba(255, 193, 0, .48);
+  box-shadow: 0 10px 25px rgba(215, 14, 24, .58);
 }
 
 .cta:focus-visible {

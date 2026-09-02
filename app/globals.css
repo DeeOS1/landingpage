@@ -416,7 +416,7 @@ footer {
   }
 
   .brand {
-    margin-bottom: 48vh;
+    margin-bottom: 2vh;
   }
 
   .hero {
@@ -533,7 +533,7 @@ footer {
 
 @media (max-width: 420px) {
   .brand {
-    margin-bottom: 43vh;
+    margin-bottom: 0;
   }
 
   h1 {

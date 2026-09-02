@@ -198,18 +198,6 @@ h1 strong {
   box-shadow: inset 0 0 24px rgba(255, 187, 0, .04);
 }
 
-.places-icon {
-  display: grid;
-  place-items: center;
-  width: clamp(58px, 4.2vw, 67px);
-  aspect-ratio: 1;
-  border: 1.5px solid var(--yellow);
-  border-radius: 50%;
-  color: var(--yellow);
-  font-family: Georgia, serif;
-  font-size: clamp(38px, 3.1vw, 50px);
-  line-height: 1;
-}
 
 .places-card strong {
   display: block;
@@ -474,9 +462,6 @@ footer {
     gap: 18px;
   }
 
-  .places-icon {
-    width: 68px;
-  }
 
   .places-card strong {
     margin: 0;

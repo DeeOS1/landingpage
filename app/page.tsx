@@ -33,7 +33,6 @@ export default function Home() {
               </article>
 
               <article className="places-card">
-                <span className="places-icon" aria-hidden="true">☆</span>
                 <strong>60</strong>
                 <span>призовых<br />мест</span>
               </article>

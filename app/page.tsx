@@ -1,3 +1,7 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
 const leagues = [
   { logo: '/assets/Premier League 2.png', name: 'Premier League', country: 'Англия', className: 'premier' },
   { logo: '/assets/La Liga.png', name: 'La Liga', country: 'Испания', className: 'laliga' },
@@ -7,6 +11,25 @@ const leagues = [
 ];
 
 export default function Home() {
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isRegistrationOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsRegistrationOpen(false);
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isRegistrationOpen]);
+
   return (
     <main className="landing">
       <div className="background-glow" aria-hidden="true" />
@@ -38,7 +61,9 @@ export default function Home() {
               </article>
             </div>
 
-            <a className="cta" href="https://tennisi.tj/2026/">Участвовать</a>
+            <button className="cta" type="button" onClick={() => setIsRegistrationOpen(true)}>
+              Участвовать
+            </button>
           </div>
         </section>
 
@@ -58,6 +83,35 @@ export default function Home() {
 
         <footer>Акция от Tennisi.tj <span aria-hidden="true">•</span> 18+</footer>
       </div>
+
+      {isRegistrationOpen && (
+        <div
+          className="registration-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Регистрация Tennisi"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setIsRegistrationOpen(false);
+          }}
+        >
+          <div className="registration-window">
+            <button
+              className="registration-close"
+              type="button"
+              aria-label="Закрыть форму регистрации"
+              onClick={() => setIsRegistrationOpen(false)}
+              autoFocus
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <iframe
+              className="registration-frame"
+              src="https://tennisi.tj/mtg2/cgi/!reg.NewPlayer?lang=russiteid="
+              title="Регистрация игрока Tennisi"
+            />
+          </div>
+        </div>
+      )}
 
     </main>
   );
